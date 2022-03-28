@@ -12,7 +12,7 @@ terraform {
 
 
 provider "aws" {
-  region     = "us-east-1"
+  region = var.region
 }
 
 resource "aws_kms_key" "mykey" {
@@ -54,7 +54,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "server_side_encry
 #Dynamodb to lock terraform state
 ################################################
 resource "aws_dynamodb_table" "terraform-lock" {
-  name             = "terraform-lock"
+  name             = var.dynamodb_table
   hash_key         = "TestTableHashKey"
   billing_mode     = "PAY_PER_REQUEST"
   stream_enabled   = true
