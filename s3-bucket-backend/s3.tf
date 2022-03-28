@@ -12,9 +12,7 @@ terraform {
 
 
 provider "aws" {
-  region = "us-east-1"
-  access_key = "AKIA4AUO6GOUE2DHFNPY"
-  secret_key = "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"
+  region     = "us-east-1"
 }
 
 resource "aws_kms_key" "mykey" {
@@ -23,10 +21,10 @@ resource "aws_kms_key" "mykey" {
 }
 
 resource "aws_s3_bucket" "solution_bucket" {
-  bucket = "solution_bucket3"
+  bucket = "solution-bucket3"
 
 }
- /*
+/*
   versioning {
     enabled = true
   }
@@ -42,14 +40,14 @@ resource "aws_s3_bucket_versioning" "versioning_solution_bucket" {
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "server_side_encryption" {
   bucket = aws_s3_bucket.solution_bucket.id
- 
-    rule {
-      apply_server_side_encryption_by_default {
-        kms_master_key_id = aws_kms_key.mykey.arn
-        sse_algorithm     = "aws:kms"
-      }
+
+  rule {
+    apply_server_side_encryption_by_default {
+      kms_master_key_id = aws_kms_key.mykey.arn
+      sse_algorithm     = "aws:kms"
     }
   }
+}
 
 
 ################################################
