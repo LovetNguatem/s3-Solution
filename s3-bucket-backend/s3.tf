@@ -1,6 +1,26 @@
 
+
 # remote backend. 
 
+
+=======
+#########################################
+#create S3 bucket
+#########################################
+/*
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+
+provider "aws" {
+  region = var.region
+}
 
 
 module "s3_backend_bucket" {
