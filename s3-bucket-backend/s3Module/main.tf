@@ -11,6 +11,8 @@ resource "aws_s3_bucket" "solution_bucket" {
 }
 
 
+#versioning of s3 bucket 
+
 
 resource "aws_s3_bucket_versioning" "versioning_solution_bucket" {
   bucket = aws_s3_bucket.solution_bucket.id

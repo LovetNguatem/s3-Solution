@@ -1,3 +1,9 @@
+
+
+# remote backend. 
+
+
+=======
 #########################################
 #create S3 bucket
 #########################################
@@ -15,7 +21,7 @@ terraform {
 provider "aws" {
   region = var.region
 }
-*/
+
 
 module "s3_backend_bucket" {
   source         = "/Users/lovetnguatem/Documents/s3-Solution/s3-bucket-backend/s3Module/"
