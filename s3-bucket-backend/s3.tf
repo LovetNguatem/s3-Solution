@@ -29,5 +29,4 @@ module "s3_backend_bucket" {
   dynamodb_table = var.dynamodb_table
   region         = var.region
 
-
 }
