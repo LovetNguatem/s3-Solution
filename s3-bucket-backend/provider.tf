@@ -7,6 +7,7 @@ terraform {
   }
 }
 
+
 # terraform {
 #   backend "s3" {
 #     # Replace this with your bucket name!
@@ -18,6 +19,7 @@ terraform {
 #     encrypt        = true
 #   }
 # }
+
 
 
 provider "aws" {
