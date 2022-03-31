@@ -1,13 +1,13 @@
 
 
-# remote backend. 
+# # remote backend. 
 
 
-=======
-#########################################
-#create S3 bucket
-#########################################
-/*
+# #=======
+# #########################################
+# #create S3 bucket
+# #########################################
+# /*
 terraform {
   required_providers {
     aws = {
@@ -29,4 +29,8 @@ module "s3_backend_bucket" {
   dynamodb_table = var.dynamodb_table
   region         = var.region
 
+}
+
+output "s3" {
+  value = module.s3_backend_bucket.s3_bucket
 }

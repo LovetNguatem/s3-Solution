@@ -7,17 +7,17 @@ terraform {
   }
 }
 
-terraform {
-  backend "s3" {
-    # Replace this with your bucket name!
-    bucket = "solution-bucket3"
-    key    = "global/s3/terraform.tfstate"
-    region = "us-east-1"
-    # Replace this with your DynamoDB table name!
-    dynamodb_table = "terraform-lock"
-    encrypt        = true
-  }
-}
+# terraform {
+#   backend "s3" {
+#     # Replace this with your bucket name!
+#     bucket = "solution-bucket3"
+#     key    = "global/s3/terraform.tfstate"
+#     region = "us-east-1"
+#     # Replace this with your DynamoDB table name!
+#     dynamodb_table = "terraform-lock"
+#     encrypt        = true
+#   }
+# }
 
 
 provider "aws" {
